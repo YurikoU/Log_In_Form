@@ -84,6 +84,7 @@ namespace In_class_Assignment2
             this.radioEquipmentAccessories.TabStop = true;
             this.radioEquipmentAccessories.Text = "Equipment / Accessories";
             this.radioEquipmentAccessories.UseVisualStyleBackColor = true;
+            this.radioEquipmentAccessories.CheckedChanged += new System.EventHandler(this.radioEquipmentAccessories_CheckedChanged);
             // 
             // radioJuiceBar
             // 
@@ -95,6 +96,7 @@ namespace In_class_Assignment2
             this.radioJuiceBar.TabStop = true;
             this.radioJuiceBar.Text = "Juice Bar";
             this.radioJuiceBar.UseVisualStyleBackColor = true;
+            this.radioJuiceBar.CheckedChanged += new System.EventHandler(this.radioJuiceBar_CheckedChanged);
             // 
             // radioMembership
             // 
@@ -106,6 +108,7 @@ namespace In_class_Assignment2
             this.radioMembership.TabStop = true;
             this.radioMembership.Text = "Membership";
             this.radioMembership.UseVisualStyleBackColor = true;
+            this.radioMembership.CheckedChanged += new System.EventHandler(this.radioMembership_CheckedChanged);
             // 
             // radioPersonalTraining
             // 
@@ -117,6 +120,7 @@ namespace In_class_Assignment2
             this.radioPersonalTraining.TabStop = true;
             this.radioPersonalTraining.Text = "Personal Training";
             this.radioPersonalTraining.UseVisualStyleBackColor = true;
+            this.radioPersonalTraining.CheckedChanged += new System.EventHandler(this.radioPersonalTraining_CheckedChanged);
             // 
             // groupBoxDepartment
             // 

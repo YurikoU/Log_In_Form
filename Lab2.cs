@@ -8,6 +8,7 @@ Lab 2
 
 
 
+using In_class_Assignment2.Properties;
 using System;
 using System.Windows.Forms;
 
@@ -35,7 +36,7 @@ namespace In_class_Assignment2
             name = textBoxName.Text;
             id = maskedTextBoxMemberId.Text;
 
-            if (name != null && id != null)
+            if (name != null && id.Length == 5)
             {
                 //Name and ID forms will be invisible
                 labelName.Visible = false;
@@ -46,7 +47,7 @@ namespace In_class_Assignment2
                 //Button availability will be switched
                 buttonSignIn.Enabled = false;
                 buttonPrint.Enabled = true;
-                buttonClear.Enabled = true;
+                buttonClear.Enabled = false;
 
                 //Following properties will enable
                 richTextBoxWelcom.Visible = true;
@@ -57,8 +58,69 @@ namespace In_class_Assignment2
 
                 richTextBoxWelcom.Text = "Welcome " + name + "!\nYour member ID: " + id;
             }
-
         }
+
+
+        private void radioClothing_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxPromotion.Text = "All items are 10% OFF now!";
+            if (checkBoxImageVisible.Checked)
+            {
+                pictureBoxImage.Image = Resources.clothing;
+            } 
+            else {
+                pictureBoxImage.Enabled = false;
+            }
+        }
+
+        private void radioEquipmentAccessories_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxPromotion.Text = "Weight training tools, yoga mat, balance balls, etc";
+            if (checkBoxImageVisible.Checked)
+            {
+                pictureBoxImage.Image = Resources.accessories;
+            }
+            else {
+                pictureBoxImage.Enabled = false;
+            }
+        }
+
+        private void radioJuiceBar_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxPromotion.Text = "Fresh fruit juice at Juice Bar";
+            if (checkBoxImageVisible.Checked)
+            {
+                pictureBoxImage.Image = Resources.Juice_bar;
+            }
+            else {
+                pictureBoxImage.Enabled = false;
+            }
+        }
+
+        private void radioMembership_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxPromotion.Text = "You are welcome to join our membership";
+            if (checkBoxImageVisible.Checked)
+            {
+                pictureBoxImage.Image = Resources.membership;
+            }
+            else {
+                pictureBoxImage.Enabled = false;
+            }
+        }
+
+        private void radioPersonalTraining_CheckedChanged(object sender, EventArgs e)
+        {
+            textBoxPromotion.Text = "Everyday available from 8 AM to 9 PM";
+            if (checkBoxImageVisible.Checked)
+            {
+                pictureBoxImage.Image = Resources.personal_training;
+            }
+            else {
+                pictureBoxImage.Enabled = false;
+            }
+        }
+
 
 
 
