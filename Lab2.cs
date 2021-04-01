@@ -64,66 +64,56 @@ namespace In_class_Assignment2
         private void radioClothing_CheckedChanged(object sender, EventArgs e)
         {
             textBoxPromotion.Text = "All items are 10% OFF now!";
-            if (checkBoxImageVisible.Checked)
-            {
-                pictureBoxImage.Image = Resources.clothing;
-            } 
-            else {
-                pictureBoxImage.Enabled = false;
-            }
+　          pictureBoxImage.Image = Resources.clothing;
         }
 
         private void radioEquipmentAccessories_CheckedChanged(object sender, EventArgs e)
         {
             textBoxPromotion.Text = "Weight training tools, yoga mat, balance balls, etc";
-            if (checkBoxImageVisible.Checked)
-            {
-                pictureBoxImage.Image = Resources.accessories;
-            }
-            else {
-                pictureBoxImage.Enabled = false;
-            }
+            pictureBoxImage.Image = Resources.accessories;
         }
 
         private void radioJuiceBar_CheckedChanged(object sender, EventArgs e)
         {
             textBoxPromotion.Text = "Fresh fruit juice at Juice Bar";
-            if (checkBoxImageVisible.Checked)
-            {
-                pictureBoxImage.Image = Resources.Juice_bar;
-            }
-            else {
-                pictureBoxImage.Enabled = false;
-            }
+            pictureBoxImage.Image = Resources.Juice_bar;
         }
 
         private void radioMembership_CheckedChanged(object sender, EventArgs e)
         {
             textBoxPromotion.Text = "You are welcome to join our membership";
-            if (checkBoxImageVisible.Checked)
-            {
-                pictureBoxImage.Image = Resources.membership;
-            }
-            else {
-                pictureBoxImage.Enabled = false;
-            }
+          　pictureBoxImage.Image = Resources.membership;
         }
 
         private void radioPersonalTraining_CheckedChanged(object sender, EventArgs e)
         {
             textBoxPromotion.Text = "Everyday available from 8 AM to 9 PM";
-            if (checkBoxImageVisible.Checked)
-            {
-                pictureBoxImage.Image = Resources.personal_training;
-            }
-            else {
-                pictureBoxImage.Enabled = false;
-            }
+            pictureBoxImage.Image = Resources.personal_training;
         }
 
 
+        private void buttonExit_Click(object sender, EventArgs e)
+        {   
+            //Exit the application
+            this.Close();
+        }
 
 
+        private void buttonPrint_Click(object sender, EventArgs e)
+        {
+            buttonPrint.PrintAction = System.Drawing.Printing.PrintAction.PrintToPreview;
+            buttonPrint.Print();
+        }
 
+        private void checkBoxImageVisible_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxImageVisible.Checked)
+            {
+                pictureBoxImage.Visible = true;
+            }
+            else {
+                pictureBoxImage.Visible = false;
+            }
+        }
     }
 }

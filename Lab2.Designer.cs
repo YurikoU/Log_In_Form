@@ -198,6 +198,7 @@ namespace In_class_Assignment2
             this.checkBoxImageVisible.Text = "Image Visible";
             this.checkBoxImageVisible.UseVisualStyleBackColor = true;
             this.checkBoxImageVisible.Visible = false;
+            this.checkBoxImageVisible.CheckedChanged += new System.EventHandler(this.checkBoxImageVisible_CheckedChanged);
             // 
             // buttonSignIn
             // 
@@ -218,6 +219,7 @@ namespace In_class_Assignment2
             this.buttonPrint.TabIndex = 16;
             this.buttonPrint.Text = "Print";
             this.buttonPrint.UseVisualStyleBackColor = true;
+            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // buttonExit
             // 
@@ -227,6 +229,7 @@ namespace In_class_Assignment2
             this.buttonExit.TabIndex = 17;
             this.buttonExit.Text = "Exit";
             this.buttonExit.UseVisualStyleBackColor = true;
+            this.buttonExit.Click += new System.EventHandler(this.buttonExit_Click);
             // 
             // buttonClear
             // 
