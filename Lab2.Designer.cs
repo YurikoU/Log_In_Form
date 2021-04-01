@@ -39,18 +39,18 @@ namespace In_class_Assignment2
             this.labelName = new System.Windows.Forms.Label();
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.labelMemberId = new System.Windows.Forms.Label();
-            this.textBoxMemberId = new System.Windows.Forms.TextBox();
             this.richTextBoxWelcom = new System.Windows.Forms.RichTextBox();
             this.textBoxPromotion = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxImage = new System.Windows.Forms.PictureBox();
             this.checkBoxImageVisible = new System.Windows.Forms.CheckBox();
             this.buttonSignIn = new System.Windows.Forms.Button();
             this.buttonPrint = new System.Windows.Forms.Button();
             this.buttonExit = new System.Windows.Forms.Button();
             this.buttonClear = new System.Windows.Forms.Button();
             this.labelSignature = new System.Windows.Forms.Label();
+            this.maskedTextBoxMemberId = new System.Windows.Forms.MaskedTextBox();
             this.groupBoxDepartment.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -158,13 +158,6 @@ namespace In_class_Assignment2
             this.labelMemberId.TabIndex = 9;
             this.labelMemberId.Text = "Member ID";
             // 
-            // textBoxMemberId
-            // 
-            this.textBoxMemberId.Location = new System.Drawing.Point(489, 144);
-            this.textBoxMemberId.Name = "textBoxMemberId";
-            this.textBoxMemberId.Size = new System.Drawing.Size(140, 31);
-            this.textBoxMemberId.TabIndex = 10;
-            // 
             // richTextBoxWelcom
             // 
             this.richTextBoxWelcom.Location = new System.Drawing.Point(353, 204);
@@ -182,14 +175,14 @@ namespace In_class_Assignment2
             this.textBoxPromotion.TabIndex = 12;
             this.textBoxPromotion.Visible = false;
             // 
-            // pictureBox1
+            // pictureBoxImage
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(38, 377);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(266, 212);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Visible = false;
+            this.pictureBoxImage.Location = new System.Drawing.Point(38, 377);
+            this.pictureBoxImage.Name = "pictureBoxImage";
+            this.pictureBoxImage.Size = new System.Drawing.Size(266, 212);
+            this.pictureBoxImage.TabIndex = 13;
+            this.pictureBoxImage.TabStop = false;
+            this.pictureBoxImage.Visible = false;
             // 
             // checkBoxImageVisible
             // 
@@ -210,6 +203,7 @@ namespace In_class_Assignment2
             this.buttonSignIn.TabIndex = 15;
             this.buttonSignIn.Text = "Sign In";
             this.buttonSignIn.UseVisualStyleBackColor = true;
+            this.buttonSignIn.Click += new System.EventHandler(this.buttonSignIn_Click);
             // 
             // buttonPrint
             // 
@@ -239,6 +233,7 @@ namespace In_class_Assignment2
             this.buttonClear.TabIndex = 18;
             this.buttonClear.Text = "Clear";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // labelSignature
             // 
@@ -251,21 +246,30 @@ namespace In_class_Assignment2
             this.labelSignature.TabIndex = 19;
             this.labelSignature.Text = "Yuriko Uchida";
             // 
+            // maskedTextBoxMemberId
+            // 
+            this.maskedTextBoxMemberId.Location = new System.Drawing.Point(489, 144);
+            this.maskedTextBoxMemberId.Mask = "00000";
+            this.maskedTextBoxMemberId.Name = "maskedTextBoxMemberId";
+            this.maskedTextBoxMemberId.Size = new System.Drawing.Size(150, 31);
+            this.maskedTextBoxMemberId.TabIndex = 20;
+            this.maskedTextBoxMemberId.ValidatingType = typeof(int);
+            // 
             // Lab2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(822, 648);
+            this.Controls.Add(this.maskedTextBoxMemberId);
             this.Controls.Add(this.labelSignature);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonExit);
             this.Controls.Add(this.buttonPrint);
             this.Controls.Add(this.buttonSignIn);
             this.Controls.Add(this.checkBoxImageVisible);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBoxImage);
             this.Controls.Add(this.textBoxPromotion);
             this.Controls.Add(this.richTextBoxWelcom);
-            this.Controls.Add(this.textBoxMemberId);
             this.Controls.Add(this.labelMemberId);
             this.Controls.Add(this.textBoxName);
             this.Controls.Add(this.labelName);
@@ -276,7 +280,7 @@ namespace In_class_Assignment2
             this.Text = "Sign In Form";
             this.groupBoxDepartment.ResumeLayout(false);
             this.groupBoxDepartment.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -294,15 +298,15 @@ namespace In_class_Assignment2
         private System.Windows.Forms.Label labelName;
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.Label labelMemberId;
-        private System.Windows.Forms.TextBox textBoxMemberId;
         private System.Windows.Forms.RichTextBox richTextBoxWelcom;
         private System.Windows.Forms.TextBox textBoxPromotion;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxImage;
         private System.Windows.Forms.CheckBox checkBoxImageVisible;
         private System.Windows.Forms.Button buttonSignIn;
         private System.Windows.Forms.Button buttonPrint;
         private System.Windows.Forms.Button buttonExit;
         private System.Windows.Forms.Button buttonClear;
         private System.Windows.Forms.Label labelSignature;
+        private System.Windows.Forms.MaskedTextBox maskedTextBoxMemberId;
     }
 }
