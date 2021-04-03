@@ -1,4 +1,5 @@
-﻿/*
+﻿// Author name and due date
+/*
 Student Name: Yuriko Uchida
 Student Number: #200448500
 
@@ -6,6 +7,7 @@ Due Date: April 7, 2021
 Lab 2
 */
 
+// Import libraries
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -14,8 +16,6 @@ namespace Lab2_Winter2021
 {
     public partial class Lab2 : Form
     {
-
-
         public Lab2()
         {
             InitializeComponent();
@@ -24,6 +24,7 @@ namespace Lab2_Winter2021
         
         private void buttonClear_Click(object sender, EventArgs e)
         {
+            // Delete user input
             textBoxName.Text = "";
             maskedTextBoxMemberId.Text = "";
         }
@@ -36,18 +37,18 @@ namespace Lab2_Winter2021
 
             if (name != null && id.Length == 4)
             {
-                //Name and ID forms will be invisible
+                // Name and ID forms will be invisible
                 labelName.Visible = false;
                 textBoxName.Visible = false;
                 labelMemberId.Visible = false;
                 maskedTextBoxMemberId.Visible = false;
 
-                //Button availability will be switched
+                // Button availability will be switched
                 buttonSignIn.Enabled = false;
                 buttonPrint.Enabled = true;
                 buttonClear.Enabled = false;
 
-                //Following properties will enable
+                // Following properties will enable
                 richTextBoxWelcome.Visible = true;
                 textBoxPromotion.Visible = true;
                 groupDepartment.Enabled = true;
@@ -60,16 +61,16 @@ namespace Lab2_Winter2021
 
         private void buttonExit_Click(object sender, EventArgs e)
         {
-            //Exit the application
+            // Exit the application
             this.Close();
         }
 
 
         private void buttonPrint_Click(object sender, EventArgs e)
         {
-            //PrintPageイベントハンドラの追加
+            // Add PrintPageEventHandler
             printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(printDocument_PrintPage);
-            //印刷を開始する
+            // Call printDocument and start printing
             printDocument.Print();
         }
 
@@ -91,6 +92,7 @@ namespace Lab2_Winter2021
             textBoxPromotion.Text = "All items are 10% OFF now!";
             if (checkBoxImageVisible.Checked)
             {
+                // A proper image will be shown only when "Image Visible" checkbox is checked
                 pictureBoxDepartment.Image = Properties.Resources.clothing;
             }
             else
@@ -103,9 +105,10 @@ namespace Lab2_Winter2021
 
         private void radioEquipment_CheckedChanged(object sender, EventArgs e)
         {
-            textBoxPromotion.Text = "Weight training tools, yoga mat, balance balls, etc";
+            textBoxPromotion.Text = "Workout tools, yoga mat, balance balls, etc";
             if (checkBoxImageVisible.Checked)
             {
+                // A proper image will be shown only when "Image Visible" checkbox is checked
                 pictureBoxDepartment.Image = Properties.Resources.accessories;
             }
             else
@@ -120,6 +123,7 @@ namespace Lab2_Winter2021
             textBoxPromotion.Text = "Fresh fruit juice at Juice Bar";
             if (checkBoxImageVisible.Checked)
             {
+                // A proper image will be shown only when "Image Visible" checkbox is checked
                 pictureBoxDepartment.Image = Properties.Resources.juice_bar;
             }
             else
@@ -133,6 +137,7 @@ namespace Lab2_Winter2021
             textBoxPromotion.Text = "You are welcome to join our membership";
             if (checkBoxImageVisible.Checked)
             {
+                // A proper image will be shown only when "Image Visible" checkbox is checked
                 pictureBoxDepartment.Image = Properties.Resources.membership;
             }
             else
@@ -147,6 +152,7 @@ namespace Lab2_Winter2021
             textBoxPromotion.Text = "Everyday available from 8 AM to 9 PM";
             if (checkBoxImageVisible.Checked)
             {
+                // A proper image will be shown only when "Image Visible" checkbox is checked
                 pictureBoxDepartment.Image = Properties.Resources.personal_training;
             }
             else
@@ -159,16 +165,31 @@ namespace Lab2_Winter2021
         {
             if (!checkBoxImageVisible.Checked)
             {
+                // If "Image Visible" checkbox is NOT checked, no image will be shown
                 pictureBoxDepartment.Image = null;
             }
             else
             {
-
-
-
-
-                pictureBoxDepartment.Image = null;
-
+                // A proper image will be shown based on the selected radio button
+                if (radioClothing.Checked)
+                {
+                    pictureBoxDepartment.Image = Properties.Resources.clothing;
+                } 
+                else if (radioEquipment.Checked) {
+                    pictureBoxDepartment.Image = Properties.Resources.accessories;
+                }
+                else if (radioJuiceBar.Checked)
+                {
+                    pictureBoxDepartment.Image = Properties.Resources.juice_bar;
+                }
+                else if (radioMembership.Checked)
+                {
+                    pictureBoxDepartment.Image = Properties.Resources.membership;
+                }
+                else if (radioPersonalTraining.Checked)
+                {
+                    pictureBoxDepartment.Image = Properties.Resources.personal_training;
+                }
 
             }
 
