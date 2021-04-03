@@ -54,6 +54,7 @@ namespace Lab2_Winter2021
             this.label2 = new System.Windows.Forms.Label();
             this.labelAlartName = new System.Windows.Forms.Label();
             this.labelAlartId = new System.Windows.Forms.Label();
+            this.buttonSignOut = new System.Windows.Forms.Button();
             this.groupDepartment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDepartment)).BeginInit();
             this.SuspendLayout();
@@ -226,7 +227,7 @@ namespace Lab2_Winter2021
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(634, 496);
+            this.buttonExit.Location = new System.Drawing.Point(676, 544);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(112, 34);
             this.buttonExit.TabIndex = 17;
@@ -256,6 +257,7 @@ namespace Lab2_Winter2021
             // checkBoxImageVisible
             // 
             this.checkBoxImageVisible.AutoSize = true;
+            this.checkBoxImageVisible.Enabled = false;
             this.checkBoxImageVisible.Location = new System.Drawing.Point(47, 569);
             this.checkBoxImageVisible.Name = "checkBoxImageVisible";
             this.checkBoxImageVisible.Size = new System.Drawing.Size(144, 29);
@@ -296,11 +298,23 @@ namespace Lab2_Winter2021
             this.labelAlartId.Text = "* Member ID must be four digits";
             this.labelAlartId.Visible = false;
             // 
+            // buttonSignOut
+            // 
+            this.buttonSignOut.Enabled = false;
+            this.buttonSignOut.Location = new System.Drawing.Point(549, 544);
+            this.buttonSignOut.Name = "buttonSignOut";
+            this.buttonSignOut.Size = new System.Drawing.Size(112, 34);
+            this.buttonSignOut.TabIndex = 24;
+            this.buttonSignOut.Text = "Sign Out";
+            this.buttonSignOut.UseVisualStyleBackColor = true;
+            this.buttonSignOut.Click += new System.EventHandler(this.buttonSignOut_Click);
+            // 
             // Lab2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 613);
+            this.Controls.Add(this.buttonSignOut);
             this.Controls.Add(this.labelAlartId);
             this.Controls.Add(this.labelAlartName);
             this.Controls.Add(this.label2);
@@ -356,6 +370,7 @@ namespace Lab2_Winter2021
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label labelAlartName;
         private System.Windows.Forms.Label labelAlartId;
+        private System.Windows.Forms.Button buttonSignOut;
     }
 }
 

@@ -48,12 +48,13 @@ namespace Lab2_Winter2021
                 buttonSignIn.Enabled = false;
                 buttonPrint.Enabled = true;
                 buttonClear.Enabled = false;
+                buttonSignOut.Enabled = true;
 
                 // Following properties will enable
                 richTextBoxWelcome.Visible = true;
                 textBoxPromotion.Visible = true;
                 groupDepartment.Enabled = true;
-                checkBoxImageVisible.Visible = true;
+                checkBoxImageVisible.Enabled = true;
                 richTextBoxWelcome.Text = "Welcome " + name + "!\nYour member ID: " + id;
             } 
             if (name == "")
@@ -202,6 +203,27 @@ namespace Lab2_Winter2021
 
             }
 
+        }
+
+        private void buttonSignOut_Click(object sender, EventArgs e)
+        {
+            textBoxName.Text = "";
+            maskedTextBoxMemberId.Text = "";
+
+            labelName.Visible = true;
+            textBoxName.Visible = true;
+            labelMemberId.Visible = true;
+            maskedTextBoxMemberId.Visible = true;
+            labelAlartName.Visible = false;
+            labelAlartId.Visible = false;
+            buttonSignIn.Enabled = true;
+            buttonPrint.Enabled = false;
+            buttonClear.Enabled = true;
+            richTextBoxWelcome.Visible = false;
+            textBoxPromotion.Visible = false;
+            groupDepartment.Enabled = false;
+            checkBoxImageVisible.Enabled = false;
+            buttonSignOut.Enabled = false;
         }
     }
 }
