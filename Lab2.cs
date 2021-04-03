@@ -1,5 +1,4 @@
-﻿// Author name and due date
-/*
+﻿/*
 Student Name: Yuriko Uchida
 Student Number: #200448500
 
@@ -7,9 +6,9 @@ Due Date: April 7, 2021
 Lab 2
 */
 
-// Import libraries
 using System;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.Windows.Forms;
 
 namespace Lab2_Winter2021
@@ -69,13 +68,13 @@ namespace Lab2_Winter2021
         private void buttonPrint_Click(object sender, EventArgs e)
         {
             // Add PrintPageEventHandler
-            printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(printDocument_PrintPage);
+            printDocument.PrintPage += new PrintPageEventHandler(printDocument_PrintPage);
             // Call printDocument and start printing
             printDocument.Print();
         }
 
 
-        private void printDocument_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
             //画像を読み込む
             Image img = Image.FromFile("test.bmp");
