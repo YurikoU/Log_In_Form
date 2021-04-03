@@ -29,6 +29,7 @@ namespace Lab2_Winter2021
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab2));
             this.label1 = new System.Windows.Forms.Label();
             this.radioClothing = new System.Windows.Forms.RadioButton();
             this.radioEquipment = new System.Windows.Forms.RadioButton();
@@ -50,6 +51,7 @@ namespace Lab2_Winter2021
             this.pictureBoxDepartment = new System.Windows.Forms.PictureBox();
             this.checkBoxImageVisible = new System.Windows.Forms.CheckBox();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
+            this.label2 = new System.Windows.Forms.Label();
             this.groupDepartment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDepartment)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +60,7 @@ namespace Lab2_Winter2021
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Narrow", 28F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(81, 9);
+            this.label1.Location = new System.Drawing.Point(85, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(616, 66);
             this.label1.TabIndex = 0;
@@ -74,6 +76,7 @@ namespace Lab2_Winter2021
             this.radioClothing.TabStop = true;
             this.radioClothing.Text = "Clothing";
             this.radioClothing.UseVisualStyleBackColor = true;
+            this.radioClothing.CheckedChanged += new System.EventHandler(this.radioClothing_CheckedChanged);
             // 
             // radioEquipment
             // 
@@ -85,6 +88,7 @@ namespace Lab2_Winter2021
             this.radioEquipment.TabStop = true;
             this.radioEquipment.Text = "Equipment / Accessories";
             this.radioEquipment.UseVisualStyleBackColor = true;
+            this.radioEquipment.CheckedChanged += new System.EventHandler(this.radioEquipment_CheckedChanged);
             // 
             // radioJuiceBar
             // 
@@ -96,6 +100,7 @@ namespace Lab2_Winter2021
             this.radioJuiceBar.TabStop = true;
             this.radioJuiceBar.Text = "Juice Bar";
             this.radioJuiceBar.UseVisualStyleBackColor = true;
+            this.radioJuiceBar.CheckedChanged += new System.EventHandler(this.radioJuiceBar_CheckedChanged);
             // 
             // radioMembership
             // 
@@ -107,6 +112,7 @@ namespace Lab2_Winter2021
             this.radioMembership.TabStop = true;
             this.radioMembership.Text = "Membership";
             this.radioMembership.UseVisualStyleBackColor = true;
+            this.radioMembership.CheckedChanged += new System.EventHandler(this.radioMembership_CheckedChanged);
             // 
             // radioPersonalTraining
             // 
@@ -187,7 +193,7 @@ namespace Lab2_Winter2021
             // 
             // buttonSignIn
             // 
-            this.buttonSignIn.Location = new System.Drawing.Point(637, 428);
+            this.buttonSignIn.Location = new System.Drawing.Point(634, 376);
             this.buttonSignIn.Name = "buttonSignIn";
             this.buttonSignIn.Size = new System.Drawing.Size(112, 34);
             this.buttonSignIn.TabIndex = 14;
@@ -198,17 +204,16 @@ namespace Lab2_Winter2021
             // buttonPrint
             // 
             this.buttonPrint.Enabled = false;
-            this.buttonPrint.Location = new System.Drawing.Point(637, 468);
+            this.buttonPrint.Location = new System.Drawing.Point(634, 416);
             this.buttonPrint.Name = "buttonPrint";
             this.buttonPrint.Size = new System.Drawing.Size(112, 34);
             this.buttonPrint.TabIndex = 15;
             this.buttonPrint.Text = "Print";
             this.buttonPrint.UseVisualStyleBackColor = true;
-            this.buttonPrint.Click += new System.EventHandler(this.buttonPrint_Click);
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(637, 508);
+            this.buttonClear.Location = new System.Drawing.Point(634, 456);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(112, 34);
             this.buttonClear.TabIndex = 16;
@@ -218,7 +223,7 @@ namespace Lab2_Winter2021
             // 
             // buttonExit
             // 
-            this.buttonExit.Location = new System.Drawing.Point(637, 548);
+            this.buttonExit.Location = new System.Drawing.Point(634, 496);
             this.buttonExit.Name = "buttonExit";
             this.buttonExit.Size = new System.Drawing.Size(112, 34);
             this.buttonExit.TabIndex = 17;
@@ -231,7 +236,7 @@ namespace Lab2_Winter2021
             this.labelSigniture.AutoSize = true;
             this.labelSigniture.Font = new System.Drawing.Font("Showcard Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.labelSigniture.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            this.labelSigniture.Location = new System.Drawing.Point(637, 620);
+            this.labelSigniture.Location = new System.Drawing.Point(637, 581);
             this.labelSigniture.Name = "labelSigniture";
             this.labelSigniture.Size = new System.Drawing.Size(151, 23);
             this.labelSigniture.TabIndex = 18;
@@ -239,9 +244,10 @@ namespace Lab2_Winter2021
             // 
             // pictureBoxDepartment
             // 
-            this.pictureBoxDepartment.Location = new System.Drawing.Point(47, 355);
+            this.pictureBoxDepartment.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxDepartment.Image")));
+            this.pictureBoxDepartment.Location = new System.Drawing.Point(47, 376);
             this.pictureBoxDepartment.Name = "pictureBoxDepartment";
-            this.pictureBoxDepartment.Size = new System.Drawing.Size(282, 238);
+            this.pictureBoxDepartment.Size = new System.Drawing.Size(267, 187);
             this.pictureBoxDepartment.TabIndex = 19;
             this.pictureBoxDepartment.TabStop = false;
             this.pictureBoxDepartment.Visible = false;
@@ -249,8 +255,7 @@ namespace Lab2_Winter2021
             // checkBoxImageVisible
             // 
             this.checkBoxImageVisible.AutoSize = true;
-            this.checkBoxImageVisible.Enabled = false;
-            this.checkBoxImageVisible.Location = new System.Drawing.Point(47, 599);
+            this.checkBoxImageVisible.Location = new System.Drawing.Point(47, 569);
             this.checkBoxImageVisible.Name = "checkBoxImageVisible";
             this.checkBoxImageVisible.Size = new System.Drawing.Size(144, 29);
             this.checkBoxImageVisible.TabIndex = 20;
@@ -258,15 +263,20 @@ namespace Lab2_Winter2021
             this.checkBoxImageVisible.UseVisualStyleBackColor = true;
             this.checkBoxImageVisible.CheckedChanged += new System.EventHandler(this.checkBoxImageVisible_CheckedChanged);
             // 
-            // printDocument
+            // label2
             // 
-            this.printDocument.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_PrintPage);
+            this.label2.BackColor = System.Drawing.SystemColors.MenuText;
+            this.label2.Location = new System.Drawing.Point(12, 81);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(776, 2);
+            this.label2.TabIndex = 21;
             // 
             // Lab2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 652);
+            this.ClientSize = new System.Drawing.Size(800, 613);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBoxImageVisible);
             this.Controls.Add(this.pictureBoxDepartment);
             this.Controls.Add(this.labelSigniture);
@@ -315,6 +325,7 @@ namespace Lab2_Winter2021
         private System.Windows.Forms.PictureBox pictureBoxDepartment;
         private System.Windows.Forms.CheckBox checkBoxImageVisible;
         private System.Drawing.Printing.PrintDocument printDocument;
+        private System.Windows.Forms.Label label2;
     }
 }
 
