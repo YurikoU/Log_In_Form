@@ -69,22 +69,23 @@ namespace Lab2_Winter2021
         {
             // Add PrintPageEventHandler
             printDocument.PrintPage += new PrintPageEventHandler(printDocument_PrintPage);
-            // Call printDocument and start printing
+            // Call printDocument and start print process
             printDocument.Print();
         }
 
 
         private void printDocument_PrintPage(object sender, PrintPageEventArgs e)
         {
-            //画像を読み込む
-            Image img = Image.FromFile("test.bmp");
-            //画像を描画する
+            // Create an image
+            Image img = Image.FromFile("fitness_center.jpg");
+            // Draw an image to screen
             e.Graphics.DrawImage(img, e.MarginBounds);
-            //次のページがないことを通知する
+            // No next page
             e.HasMorePages = false;
-            //後始末をする
+            // End the print operation
             img.Dispose();
         }
+
 
         private void radioClothing_CheckedChanged(object sender, EventArgs e)
         {

@@ -29,7 +29,6 @@ namespace Lab2_Winter2021
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab2));
             this.label1 = new System.Windows.Forms.Label();
             this.radioClothing = new System.Windows.Forms.RadioButton();
             this.radioEquipment = new System.Windows.Forms.RadioButton();
@@ -244,13 +243,11 @@ namespace Lab2_Winter2021
             // 
             // pictureBoxDepartment
             // 
-            this.pictureBoxDepartment.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxDepartment.Image")));
             this.pictureBoxDepartment.Location = new System.Drawing.Point(47, 376);
             this.pictureBoxDepartment.Name = "pictureBoxDepartment";
             this.pictureBoxDepartment.Size = new System.Drawing.Size(267, 187);
             this.pictureBoxDepartment.TabIndex = 19;
             this.pictureBoxDepartment.TabStop = false;
-            this.pictureBoxDepartment.Visible = false;
             // 
             // checkBoxImageVisible
             // 
