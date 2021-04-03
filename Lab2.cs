@@ -34,13 +34,15 @@ namespace Lab2_Winter2021
             String name = textBoxName.Text;
             String id = maskedTextBoxMemberId.Text;
 
-            if (name != null && id.Length == 4)
+            if (name != "" && id.Length == 4)
             {
                 // Name and ID forms will be invisible
                 labelName.Visible = false;
                 textBoxName.Visible = false;
                 labelMemberId.Visible = false;
                 maskedTextBoxMemberId.Visible = false;
+                labelAlartName.Visible = false;
+                labelAlartId.Visible = false;
 
                 // Button availability will be switched
                 buttonSignIn.Enabled = false;
@@ -53,12 +55,12 @@ namespace Lab2_Winter2021
                 groupDepartment.Enabled = true;
                 checkBoxImageVisible.Visible = true;
                 richTextBoxWelcome.Text = "Welcome " + name + "!\nYour member ID: " + id;
-            }
-            else if (name == null)
+            } 
+            if (name == "")
             {
                 labelAlartName.Visible = true;
-            }
-            else if (id.Length != 4)
+            } 
+            if (id.Length < 4)
             {
                 labelAlartId.Visible = true;
             }
