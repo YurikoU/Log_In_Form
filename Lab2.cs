@@ -15,12 +15,12 @@ namespace Lab2_Winter2021
 {
     public partial class Lab2 : Form
     {
+
         public Lab2()
         {
             InitializeComponent();
         }
 
-        
         private void buttonClear_Click(object sender, EventArgs e)
         {
             // Delete user input
@@ -51,9 +51,16 @@ namespace Lab2_Winter2021
                 richTextBoxWelcome.Visible = true;
                 textBoxPromotion.Visible = true;
                 groupDepartment.Enabled = true;
-                pictureBoxDepartment.Visible = true;
                 checkBoxImageVisible.Visible = true;
                 richTextBoxWelcome.Text = "Welcome " + name + "!\nYour member ID: " + id;
+            }
+            else if (name == null)
+            {
+                labelAlartName.Visible = true;
+            }
+            else if (id.Length != 4)
+            {
+                labelAlartId.Visible = true;
             }
         }
 

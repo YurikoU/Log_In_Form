@@ -29,6 +29,7 @@ namespace Lab2_Winter2021
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Lab2));
             this.label1 = new System.Windows.Forms.Label();
             this.radioClothing = new System.Windows.Forms.RadioButton();
             this.radioEquipment = new System.Windows.Forms.RadioButton();
@@ -51,6 +52,8 @@ namespace Lab2_Winter2021
             this.checkBoxImageVisible = new System.Windows.Forms.CheckBox();
             this.printDocument = new System.Drawing.Printing.PrintDocument();
             this.label2 = new System.Windows.Forms.Label();
+            this.labelAlartName = new System.Windows.Forms.Label();
+            this.labelAlartId = new System.Windows.Forms.Label();
             this.groupDepartment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDepartment)).BeginInit();
             this.SuspendLayout();
@@ -158,7 +161,7 @@ namespace Lab2_Winter2021
             // labelMemberId
             // 
             this.labelMemberId.AutoSize = true;
-            this.labelMemberId.Location = new System.Drawing.Point(389, 180);
+            this.labelMemberId.Location = new System.Drawing.Point(389, 175);
             this.labelMemberId.Name = "labelMemberId";
             this.labelMemberId.Size = new System.Drawing.Size(102, 25);
             this.labelMemberId.TabIndex = 10;
@@ -166,7 +169,7 @@ namespace Lab2_Winter2021
             // 
             // maskedTextBoxMemberId
             // 
-            this.maskedTextBoxMemberId.Location = new System.Drawing.Point(511, 177);
+            this.maskedTextBoxMemberId.Location = new System.Drawing.Point(511, 172);
             this.maskedTextBoxMemberId.Mask = "0000";
             this.maskedTextBoxMemberId.Name = "maskedTextBoxMemberId";
             this.maskedTextBoxMemberId.Size = new System.Drawing.Size(150, 31);
@@ -212,6 +215,7 @@ namespace Lab2_Winter2021
             // 
             // buttonClear
             // 
+            this.buttonClear.Enabled = false;
             this.buttonClear.Location = new System.Drawing.Point(634, 456);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(112, 34);
@@ -268,11 +272,37 @@ namespace Lab2_Winter2021
             this.label2.Size = new System.Drawing.Size(776, 2);
             this.label2.TabIndex = 21;
             // 
+            // labelAlartName
+            // 
+            this.labelAlartName.AutoSize = true;
+            this.labelAlartName.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelAlartName.ForeColor = System.Drawing.Color.Crimson;
+            this.labelAlartName.Location = new System.Drawing.Point(389, 83);
+            this.labelAlartName.Name = "labelAlartName";
+            this.labelAlartName.Size = new System.Drawing.Size(225, 25);
+            this.labelAlartName.TabIndex = 22;
+            this.labelAlartName.Text = "* Please enter your name";
+            this.labelAlartName.Visible = false;
+            // 
+            // labelAlartId
+            // 
+            this.labelAlartId.AutoSize = true;
+            this.labelAlartId.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelAlartId.ForeColor = System.Drawing.Color.Crimson;
+            this.labelAlartId.Location = new System.Drawing.Point(389, 108);
+            this.labelAlartId.Name = "labelAlartId";
+            this.labelAlartId.Size = new System.Drawing.Size(286, 25);
+            this.labelAlartId.TabIndex = 23;
+            this.labelAlartId.Text = "* Member ID must be four digits";
+            this.labelAlartId.Visible = false;
+            // 
             // Lab2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 613);
+            this.Controls.Add(this.labelAlartId);
+            this.Controls.Add(this.labelAlartName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.checkBoxImageVisible);
             this.Controls.Add(this.pictureBoxDepartment);
@@ -289,6 +319,7 @@ namespace Lab2_Winter2021
             this.Controls.Add(this.labelName);
             this.Controls.Add(this.groupDepartment);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Lab2";
             this.Text = "Sign In Form";
             this.groupDepartment.ResumeLayout(false);
@@ -323,6 +354,8 @@ namespace Lab2_Winter2021
         private System.Windows.Forms.CheckBox checkBoxImageVisible;
         private System.Drawing.Printing.PrintDocument printDocument;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelAlartName;
+        private System.Windows.Forms.Label labelAlartId;
     }
 }
 
